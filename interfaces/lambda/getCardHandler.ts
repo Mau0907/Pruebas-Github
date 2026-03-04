@@ -9,7 +9,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     if (!token || token.length !== 16) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ message: "Invalid token" }),
+        body: JSON.stringify({ message: "Token inválido" }),
       };
     }
 
@@ -21,7 +21,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     if (!card) {
       return {
         statusCode: 404,
-        body: JSON.stringify({ message: "Token expired or not found" }),
+        body: JSON.stringify({ message: "Token expirado o no encontrado" }),
       };
     }
 
@@ -32,7 +32,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: "Internal error" }),
+      body: JSON.stringify({ message: "Error interno del servidor" }),
     };
   }
 };
