@@ -1,0 +1,20 @@
+service: tokenization-service
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+functions:
+  createToken:
+    handler: dist/interfaces/lambda/createTokenHandler.handler
+    events:
+      - http:
+          path: token
+          method: post
+
+  getCard:
+    handler: dist/interfaces/lambda/getCardHandler.handler
+    events:
+      - http:
+          path: token/{token}
+          method: get
