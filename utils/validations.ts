@@ -23,7 +23,7 @@ const isValidLuhn = (cardNumber: string): boolean => {
 };
 
 export const validateCreateTokenBody = (body: any) => {
-  if (!body) throw new Error("Body is required");
+  if (!body) throw new Error("Cuerpo es requerido");
 
   const {
     card_number,
